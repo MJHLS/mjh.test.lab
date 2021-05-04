@@ -1,0 +1,24 @@
+{
+  "name": "mjh.test.lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@sanity/client": "^2.8.0",
+    "@sanity/image-url": "^0.140.22"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MJHLS/mjh.test.lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MJHLS/mjh.test.lab/issues"
+  },
+  "homepage": "https://github.com/MJHLS/mjh.test.lab#readme"
+}

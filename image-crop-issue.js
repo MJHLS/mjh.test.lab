@@ -1,10 +1,12 @@
 const client = require('./client')
 const imageUrlBuilder = require('@sanity/image-url')
 const builder = imageUrlBuilder(client)
-function urlFor(source, imageWidth = null, imageHeight = null) {
+function urlFor(source, imageWidth = null, imageHeight = null, imageMaxHeight = null, imageFit = null) {
   let url = builder.image(source)
   if (imageWidth) url = url.width(imageWidth)
   if (imageHeight) url = url.height(imageHeight)
+  if (imageMaxHeight) url = url.maxHeight(imageMaxHeight)
+  if (imageFit) url = url.fit(imageFit)
   return url.auto('format').url()
 }
 
@@ -21,7 +23,11 @@ const main = () => {
   console.log('1. URL with width & height:' + `\n- `, url)
   url = urlFor(thumbnail)
   console.log('2. url without width or height: ' + `\n- `, url)
-  console.log('3. thumbnail info: ' + `\n- `, thumbnail)
+  
+  url = urlFor(thumbnail, 480, null, 270, 'crop')
+  console.log('3. url with crop: ' + `\n- `, url)
+
+  console.log('4. thumbnail info: ' + `\n- `, thumbnail)
 }
 
 main()
